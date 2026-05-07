@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eulchen | Selbstbedienungs-Minimarkt</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f8f5;
+      color: #1d2a22;
+    }
+
+    header {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.75), transparent 25%),
+        radial-gradient(circle at 90% 15%, rgba(184,224,190,0.65), transparent 28%),
+        linear-gradient(135deg, #0d8f2d, #0f6b2d);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero {
+      max-width: 900px;
+    }
+
+    .logo {
+      width: 165px;
+      height: 165px;
+      object-fit: cover;
+      border-radius: 50%;
+      background: white;
+      padding: 10px;
+      margin-bottom: 22px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 64px;
+      letter-spacing: 4px;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      margin: 14px 0 10px;
+      font-weight: 600;
+    }
+
+    .slogan {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 22px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: 999px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+      padding: 14px 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #0f6b2d;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 14px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #08a43a;
+    }
+
+    section {
+      max-width: 1080px;
+      margin: 42px auto;
+      padding: 0 22px;
+    }
+
+    .box {
+      background: white;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 12px 35px rgba(24, 70, 38, 0.10);
+      border: 1px solid #e0eadf;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 34px;
+      color: #0f6b2d;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: #4a5b50;
+      max-width: 850px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: #f7faf7;
+      border: 1px solid #dfeade;
+      border-radius: 22px;
+      padding: 22px;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.10);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #0f6b2d;
+      font-size: 21px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eaf6eb;
+      color: #0f6b2d;
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 5px 5px 5px 0;
+    }
+
+    .customer-card {
+      margin-top: 25px;
+      max-width: 430px;
+      border-radius: 26px;
+      padding: 28px;
+      color: white;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.35), transparent 20%),
+        linear-gradient(135deg, #079d32, #0e5f2a);
+      box-shadow: 0 18px 38px rgba(13, 91, 38, 0.30);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .customer-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      right: -55px;
+      bottom: -65px;
+    }
+
+    .customer-card h3 {
+      margin: 0 0 18px;
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+
+    .customer-card p {
+      margin: 9px 0;
+      font-size: 16px;
+    }
+
+    .login-box {
+      max-width: 430px;
+      display: grid;
+      gap: 13px;
+      margin-top: 22px;
+    }
+
+    input {
+      padding: 15px;
+      border-radius: 14px;
+      border: 1px solid #c9d8c9;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #0f8f33;
+      box-shadow: 0 0 0 3px rgba(15,143,51,0.12);
+    }
+
+    button {
+      background: #0f6b2d;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #089832;
+    }
+
+    .note {
+      margin-top: 18px;
+      background: #fff9e8;
+      border-left: 6px solid #e2b84b;
+      padding: 15px;
+      border-radius: 14px;
+      color: #5a4a19;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .mini-logo {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 28px;
+      background: white;
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      justify-self: center;
+    }
+
+    footer {
+      background: #13251a;
+      color: white;
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 760px) {
+      h1 {
+        font-size: 44px;
+      }
+
+      .subtitle {
+        font-size: 19px;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="hero">
+      <img src="logo.jpg" alt="Eulchen Logo" class="logo">
+      <h1>EULCHEN</h1>
+      <p class="subtitle">Selbstbedienungs-Minimarkt in Zittau</p>
+      <p class="slogan">Digital. Schnell. Nah.</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#idee">Idee</a>
+    <a href="#standort">Standort</a>
+    <a href="#sortiment">Sortiment</a>
+    <a href="#kundenkarte">Kundenkarte</a>
+    <a href="#login">Demo-Login</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <section id="idee">
+    <div class="box split">
+      <div>
+        <h2>Unsere Idee</h2>
+        <p class="lead">
+          Eulchen ist ein moderner Selbstbedienungs-Minimarkt. Die Kunden können selbstständig einkaufen, ihre Produkte am Self-Checkout-Terminal scannen und bargeldlos bezahlen.
+        </p>
+        <p>
+          Unser Ziel ist eine schnelle, einfache und digitale Einkaufsmöglichkeit für Schüler, Studierende und Anwohner in Zittau.
+        </p>
+        <span class="badge">Self-Checkout</span>
+        <span class="badge">Bargeldlos</span>
+        <span class="badge">Smart Store</span>
+      </div>
+      <img src="logo.jpg" alt="Eulchen Logo" class="mini-logo">
+    </div>
+  </section>
+
+  <section id="standort">
+    <div class="box">
+      <h2>Standort und Öffnungszeiten</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Standort</h3>
+          <p>Külzufer 17<br>02763 Zittau</p>
+        </div>
+        <div class="card">
+          <h3>Öffnungszeiten</h3>
+          <p>Täglich von 5:00 bis 23:00 Uhr, abhängig von der rechtlichen Prüfung.</p>
+        </div>
+        <div class="card">
+          <h3>Zielgruppe</h3>
+          <p>Schüler, Studierende, Anwohner und Kunden mit kurzfristigem Einkaufsbedarf.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sortiment">
+    <div class="box">
+      <h2>Unser Sortiment</h2>
+      <p class="lead">
+        Unser Sortiment ist kompakt, praktisch und besonders interessant für junge Kunden.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Getränke</h3>
+          <p>Wasser, Softdrinks, Energy Drinks und Kaffeeprodukte.</p>
+        </div>
+        <div class="card">
+          <h3>Snacks</h3>
+          <p>Chips, Schokolade, Süßigkeiten und kleine Zwischenmahlzeiten.</p>
+        </div>
+        <div class="card">
+          <h3>Asiatische Produkte</h3>
+          <p>Instant-Nudeln, asiatische Getränke, Süßigkeiten und Fertiggerichte.</p>
+        </div>
+        <div class="card">
+          <h3>Alltagsprodukte</h3>
+          <p>Hygieneartikel, Drogerieprodukte und kleine Haushaltsartikel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kundenkarte">
+    <div class="box">
+      <h2>Eulchen-Kundenkarte</h2>
+      <p class="lead">
+        Die Eulchen-Kundenkarte ist ein Instrument zur Kundenbindung. Kunden können Punkte sammeln und später Rabatte oder Aktionen nutzen.
+      </p>
+
+      <div class="customer-card">
+        <h3>EULCHEN</h3>
+        <p><strong>Kundenkarte</strong></p>
+        <p>Name: Demo-Kunde</p>
+        <p>Kundennummer: EUL-0001</p>
+        <p>Bonusprogramm: Punkte sammeln und sparen</p>
+        <p>100 Punkte = 5 % Rabatt</p>
+      </div>
+
+      <div class="note">
+        Diese Kundenkarte ist ein Muster für die Präsentation.
+      </div>
+    </div>
+  </section>
+
+  <section id="login">
+    <div class="box">
+      <h2>Demo-Login</h2>
+      <p class="lead">
+        In Zukunft können Kunden ein digitales Kundenkonto nutzen. Diese Version ist nur eine Demo für unsere Präsentation.
+      </p>
+
+      <div class="login-box">
+        <input type="text" placeholder="Benutzername">
+        <input type="password" placeholder="Passwort">
+        <button onclick="alert('Demo-Login erfolgreich! Punkte: 120 | Rabatt: 5 %')">
+          Einloggen
+        </button>
+      </div>
+
+      <div class="note">
+        Demo-Zugang: Benutzername: demo | Passwort: demo123. Es werden keine echten Daten gespeichert.
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="box">
+      <h2>Kontakt</h2>
+      <p><strong>Eulchen GmbH</strong></p>
+      <p>Külzufer 17, 02763 Zittau</p>
+      <p>Projekt der Gruppe 5 im Fach BWL</p>
+      <p>Nur für Präsentationszwecke.</p>
+    </div>
+  </section>
+
+  <footer>
+    Eulchen Demo-Website | Gruppe 5 | Digital. Schnell. Nah.
+  </footer>
+
+</body>
+</html>
