@@ -29,7 +29,7 @@
 
     .nav {
       width: 100%;
-      padding: 28px 8%;
+      padding: 26px 8%;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -72,12 +72,12 @@
     }
 
     .hero {
-      padding: 40px 8% 70px;
+      padding: 34px 8% 68px;
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 70px;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 58px;
       align-items: center;
-      min-height: calc(100vh - 105px);
+      min-height: calc(100vh - 100px);
     }
 
     .eyebrow {
@@ -90,12 +90,12 @@
       font-weight: 900;
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     h1 {
       margin: 0;
-      font-size: 74px;
+      font-size: 70px;
       line-height: 0.98;
       letter-spacing: -3px;
       color: #101a14;
@@ -106,15 +106,15 @@
     }
 
     .intro {
-      margin-top: 28px;
-      max-width: 620px;
+      margin-top: 26px;
+      max-width: 610px;
       font-size: 20px;
-      line-height: 1.75;
+      line-height: 1.7;
       color: #56645b;
     }
 
     .actions {
-      margin-top: 36px;
+      margin-top: 32px;
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
@@ -123,7 +123,7 @@
     .btn {
       text-decoration: none;
       display: inline-block;
-      padding: 16px 24px;
+      padding: 15px 23px;
       border-radius: 999px;
       font-weight: 900;
       transition: 0.2s ease;
@@ -156,7 +156,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 560px;
+      min-height: 590px;
     }
 
     .circle {
@@ -169,47 +169,126 @@
 
     .panel {
       width: 100%;
-      max-width: 440px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(255,255,255,0.8);
+      max-width: 455px;
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(255,255,255,0.85);
       backdrop-filter: blur(22px);
       border-radius: 42px;
-      padding: 34px;
+      padding: 32px;
       box-shadow: 0 35px 90px rgba(20, 60, 30, 0.18);
       position: relative;
       z-index: 2;
     }
 
     .logo-large {
-      width: 115px;
-      height: 115px;
+      width: 105px;
+      height: 105px;
       object-fit: cover;
       border-radius: 50%;
       background: white;
       display: block;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       box-shadow: 0 14px 32px rgba(0,0,0,0.15);
     }
 
     .panel h2 {
       margin: 0;
-      font-size: 32px;
+      font-size: 30px;
       color: #111b15;
     }
 
-    .panel .small-text {
+    .small-text {
       color: #5c6a61;
-      line-height: 1.6;
-      margin: 12px 0 24px;
+      line-height: 1.55;
+      margin: 10px 0 20px;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 20px 0;
+      background: #edf5eb;
+      padding: 6px;
+      border-radius: 18px;
+    }
+
+    .tab {
+      border: none;
+      padding: 12px;
+      border-radius: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      background: transparent;
+      color: #5d6a61;
+    }
+
+    .tab.active {
+      background: white;
+      color: #0a8f35;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    }
+
+    .form {
+      display: grid;
+      gap: 10px;
+    }
+
+    .form input {
+      padding: 14px;
+      border: 1px solid #d2dfd0;
+      border-radius: 16px;
+      background: white;
+      font-size: 15px;
+    }
+
+    .form button {
+      padding: 14px;
+      border-radius: 16px;
+      border: none;
+      background: #121e16;
+      color: white;
+      font-weight: 900;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .hint {
+      font-size: 13px;
+      color: #78847c;
+      line-height: 1.45;
+      margin-top: 10px;
+    }
+
+    .error {
+      display: none;
+      color: #a83232;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .success {
+      display: none;
+      background: #f3f8f1;
+      border: 1px solid #dfe9dc;
+      border-radius: 24px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .success h3 {
+      color: #0a8f35;
+      margin: 0 0 8px;
     }
 
     .customer-card {
+      margin-top: 16px;
       background:
         radial-gradient(circle at 88% 18%, rgba(255,255,255,0.38), transparent 24%),
         linear-gradient(135deg, #0bb145, #086629);
       color: white;
       border-radius: 28px;
-      padding: 25px;
+      padding: 24px;
       box-shadow: 0 20px 45px rgba(8, 102, 41, 0.25);
     }
 
@@ -217,7 +296,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
     .card-name {
@@ -235,57 +314,24 @@
 
     .points {
       margin-top: 7px;
-      font-size: 36px;
+      font-size: 34px;
       font-weight: 900;
-    }
-
-    .login {
-      margin-top: 24px;
-      display: grid;
-      gap: 11px;
-    }
-
-    .login input {
-      padding: 14px;
-      border: 1px solid #d2dfd0;
-      border-radius: 16px;
-      background: white;
-      font-size: 15px;
-    }
-
-    .login button {
-      padding: 14px;
-      border-radius: 16px;
-      border: none;
-      background: #121e16;
-      color: white;
-      font-weight: 900;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    .error {
-      display: none;
-      color: #a83232;
-      font-size: 14px;
-      margin-top: 10px;
-      font-weight: 700;
     }
 
     .account {
       display: none;
-      margin-top: 24px;
+      margin-top: 16px;
       background: #ffffff;
       border: 1px solid #dfe9dc;
       border-radius: 26px;
-      padding: 22px;
+      padding: 20px;
       box-shadow: 0 14px 34px rgba(0,0,0,0.08);
     }
 
     .account h3 {
       margin: 0 0 8px;
       color: #0a8f35;
-      font-size: 24px;
+      font-size: 23px;
     }
 
     .account p {
@@ -297,7 +343,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin: 18px 0;
+      margin: 16px 0;
     }
 
     .account-box {
@@ -307,35 +353,68 @@
       border: 1px solid #dfe9dc;
     }
 
+    .account-box span {
+      color: #59665e;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
     .account-box strong {
       display: block;
-      font-size: 24px;
+      font-size: 25px;
       color: #0a8f35;
       margin-top: 4px;
     }
 
+    .deals-title {
+      margin: 18px 0 12px;
+      font-weight: 900;
+      color: #1d2b21;
+    }
+
     .deals {
-      margin-top: 18px;
+      display: grid;
+      gap: 12px;
     }
 
     .deal {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
       align-items: center;
       gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid #edf2eb;
-      color: #25352b;
+      padding: 12px;
+      border-radius: 18px;
+      background: #f6faf4;
+      border: 1px solid #e3eee0;
     }
 
-    .deal:last-child {
-      border-bottom: none;
+    .deal-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .deal-name {
+      font-weight: 900;
+      color: #1f2d24;
+      margin-bottom: 3px;
+    }
+
+    .deal-desc {
+      color: #718078;
+      font-size: 13px;
     }
 
     .discount {
       background: #0a9f3b;
       color: white;
-      padding: 6px 10px;
+      padding: 7px 10px;
       border-radius: 999px;
       font-size: 13px;
       font-weight: 900;
@@ -358,7 +437,7 @@
     }
 
     .info {
-      background: rgba(255,255,255,0.76);
+      background: rgba(255,255,255,0.78);
       border: 1px solid #e0eadc;
       border-radius: 28px;
       padding: 26px;
@@ -398,7 +477,7 @@
       }
 
       h1 {
-        font-size: 50px;
+        font-size: 48px;
       }
 
       .nav-right {
@@ -421,6 +500,15 @@
       .account-grid {
         grid-template-columns: 1fr;
       }
+
+      .deal {
+        grid-template-columns: 54px 1fr;
+      }
+
+      .discount {
+        grid-column: 2;
+        width: max-content;
+      }
     }
   </style>
 </head>
@@ -435,7 +523,7 @@
 
       <div class="nav-right">
         <span>Smart Minimarkt</span>
-        <span class="nav-pill">5:00–23:00</span>
+        <span class="nav-pill">7 Tage · 5:00–23:00</span>
       </div>
     </nav>
 
@@ -446,12 +534,12 @@
         <h1>Klein einkaufen. <br><span>Schnell bezahlen.</span></h1>
 
         <p class="intro">
-          Eulchen ist ein digitaler Minimarkt für den Alltag.
-          Für Snacks, Getränke, Hygieneartikel und kleine Einkäufe — ohne lange Wartezeit.
+          Eulchen ist ein digitaler Minimarkt für kleine Einkäufe im Alltag:
+          Self-Checkout, Kundenkarte und Bonusprogramm in einem modernen Konzept.
         </p>
 
         <div class="actions">
-          <a href="#karte" class="btn btn-primary">Kundenkarte zeigen</a>
+          <a href="#karte" class="btn btn-primary">Kundenkonto testen</a>
           <a href="#info" class="btn btn-secondary">Kurzinfo</a>
         </div>
       </div>
@@ -462,60 +550,93 @@
         <div class="panel">
           <img src="logo.jpg" alt="Eulchen Logo" class="logo-large">
 
-          <h2>Bonuskarte</h2>
+          <h2>Kundenkonto</h2>
           <p class="small-text">
-            Punkte sammeln, Aktionen nutzen und beim Einkauf sparen.
+            Registrieren, Kundenkarte erhalten und Bonuspunkte sammeln.
           </p>
 
-          <div class="customer-card">
-            <div class="card-head">
-              <div class="card-name">EULCHEN</div>
-              <div class="chip"></div>
-            </div>
-
-            <div>Demo-Kunde</div>
-            <div class="points">120 Punkte</div>
-            <div>5 % Rabatt verfügbar</div>
+          <div class="tabs">
+            <button class="tab active" id="registerTab" onclick="showRegister()">Registrierung</button>
+            <button class="tab" id="loginTab" onclick="showLogin()">Login</button>
           </div>
 
-          <div class="login" id="loginBox">
+          <div class="form" id="registerForm">
+            <input id="regName" type="text" placeholder="Name">
+            <input id="regEmail" type="email" placeholder="E-Mail-Adresse">
+            <input id="regPassword" type="password" placeholder="Passwort">
+            <input id="regBirth" type="date" placeholder="Geburtsdatum">
+            <button onclick="createCard()">Kundenkarte erstellen</button>
+            <div class="hint">
+              Wir erheben nur notwendige Kundendaten. Altersbeschränkte Waren benötigen eine sichere Altersprüfung.
+            </div>
+          </div>
+
+          <div class="success" id="createdCard">
+            <h3>Kundenkarte erstellt</h3>
+            <p>Das Kundenkonto wurde als Demo angelegt.</p>
+
+            <div class="customer-card">
+              <div class="card-head">
+                <div class="card-name">EULCHEN</div>
+                <div class="chip"></div>
+              </div>
+              <div id="cardCustomerName">Demo-Kunde</div>
+              <div>Kundennummer: EUL-0001</div>
+              <div class="points">0 Punkte</div>
+            </div>
+          </div>
+
+          <div class="form" id="loginForm" style="display:none;">
             <input id="username" type="text" placeholder="Benutzername">
             <input id="password" type="password" placeholder="Passwort">
             <button onclick="login()">Einloggen</button>
-            <div class="error" id="errorText">Bitte Benutzername demo und Passwort demo123 eingeben.</div>
+            <div class="error" id="errorText">Benutzername: demo · Passwort: demo123</div>
+            <div class="hint">Demo-Zugang: demo / demo123</div>
           </div>
 
           <div class="account" id="accountPanel">
             <h3>Willkommen, Demo-Kunde</h3>
-            <p>Hier sehen Sie Ihr Kundenkonto.</p>
+            <p>Hier sehen Sie Punkte, Rabatte und aktuelle Aktionen.</p>
 
             <div class="account-grid">
               <div class="account-box">
-                Bonuspunkte
+                <span>Bonuspunkte</span>
                 <strong>120</strong>
               </div>
               <div class="account-box">
-                Rabatt
+                <span>Rabatt</span>
                 <strong>5 %</strong>
               </div>
             </div>
 
+            <div class="deals-title">Aktionsprodukte</div>
+
             <div class="deals">
-              <p><strong>Aktionsprodukte</strong></p>
-
               <div class="deal">
-                <span>Instant-Nudeln</span>
-                <span class="discount">-10 %</span>
+                <div class="deal-img">🍜</div>
+                <div>
+                  <div class="deal-name">Instant-Nudeln</div>
+                  <div class="deal-desc">asiatische Sorten</div>
+                </div>
+                <div class="discount">-10 %</div>
               </div>
 
               <div class="deal">
-                <span>Energy Drink</span>
-                <span class="discount">2 für 1</span>
+                <div class="deal-img">🥤</div>
+                <div>
+                  <div class="deal-name">Energy Drink</div>
+                  <div class="deal-desc">nur diese Woche</div>
+                </div>
+                <div class="discount">2 für 1</div>
               </div>
 
               <div class="deal">
-                <span>Asiatische Snacks</span>
-                <span class="discount">-15 %</span>
+                <div class="deal-img">🍫</div>
+                <div>
+                  <div class="deal-name">Asiatische Snacks</div>
+                  <div class="deal-desc">Süßigkeiten & Chips</div>
+                </div>
+                <div class="discount">-15 %</div>
               </div>
             </div>
 
@@ -549,17 +670,46 @@
   </div>
 
   <script>
+    function showRegister() {
+      document.getElementById("registerForm").style.display = "grid";
+      document.getElementById("createdCard").style.display = "none";
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("accountPanel").style.display = "none";
+
+      document.getElementById("registerTab").classList.add("active");
+      document.getElementById("loginTab").classList.remove("active");
+    }
+
+    function showLogin() {
+      document.getElementById("registerForm").style.display = "none";
+      document.getElementById("createdCard").style.display = "none";
+      document.getElementById("loginForm").style.display = "grid";
+      document.getElementById("accountPanel").style.display = "none";
+
+      document.getElementById("loginTab").classList.add("active");
+      document.getElementById("registerTab").classList.remove("active");
+    }
+
+    function createCard() {
+      const name = document.getElementById("regName").value.trim();
+      const displayName = name || "Demo-Kunde";
+
+      document.getElementById("cardCustomerName").innerText = displayName;
+      document.getElementById("registerForm").style.display = "none";
+      document.getElementById("createdCard").style.display = "block";
+    }
+
     function login() {
       const username = document.getElementById("username").value.trim();
       const password = document.getElementById("password").value.trim();
 
       const errorText = document.getElementById("errorText");
-      const loginBox = document.getElementById("loginBox");
+      const loginForm = document.getElementById("loginForm");
       const accountPanel = document.getElementById("accountPanel");
 
       if (username === "demo" && password === "demo123") {
         errorText.style.display = "none";
-        loginBox.style.display = "none";
+        loginForm.style.display = "none";
         accountPanel.style.display = "block";
       } else {
         errorText.style.display = "block";
@@ -567,15 +717,10 @@
     }
 
     function logout() {
-      const loginBox = document.getElementById("loginBox");
-      const accountPanel = document.getElementById("accountPanel");
-      const username = document.getElementById("username");
-      const password = document.getElementById("password");
-
-      username.value = "";
-      password.value = "";
-      accountPanel.style.display = "none";
-      loginBox.style.display = "grid";
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("accountPanel").style.display = "none";
+      document.getElementById("loginForm").style.display = "grid";
     }
   </script>
 </body>
