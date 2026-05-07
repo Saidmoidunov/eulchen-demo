@@ -165,13 +165,12 @@
       height: 520px;
       border-radius: 50%;
       background: linear-gradient(135deg, rgba(10,159,59,0.18), rgba(255,255,255,0.3));
-      filter: blur(0.2px);
     }
 
     .panel {
       width: 100%;
-      max-width: 430px;
-      background: rgba(255,255,255,0.78);
+      max-width: 440px;
+      background: rgba(255,255,255,0.82);
       border: 1px solid rgba(255,255,255,0.8);
       backdrop-filter: blur(22px);
       border-radius: 42px;
@@ -182,19 +181,19 @@
     }
 
     .logo-large {
-      width: 120px;
-      height: 120px;
+      width: 115px;
+      height: 115px;
       object-fit: cover;
       border-radius: 50%;
       background: white;
       display: block;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
       box-shadow: 0 14px 32px rgba(0,0,0,0.15);
     }
 
     .panel h2 {
       margin: 0;
-      font-size: 34px;
+      font-size: 32px;
       color: #111b15;
     }
 
@@ -265,6 +264,92 @@
       font-size: 15px;
     }
 
+    .error {
+      display: none;
+      color: #a83232;
+      font-size: 14px;
+      margin-top: 10px;
+      font-weight: 700;
+    }
+
+    .account {
+      display: none;
+      margin-top: 24px;
+      background: #ffffff;
+      border: 1px solid #dfe9dc;
+      border-radius: 26px;
+      padding: 22px;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.08);
+    }
+
+    .account h3 {
+      margin: 0 0 8px;
+      color: #0a8f35;
+      font-size: 24px;
+    }
+
+    .account p {
+      margin: 8px 0;
+      color: #536058;
+    }
+
+    .account-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .account-box {
+      background: #f3f8f1;
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid #dfe9dc;
+    }
+
+    .account-box strong {
+      display: block;
+      font-size: 24px;
+      color: #0a8f35;
+      margin-top: 4px;
+    }
+
+    .deals {
+      margin-top: 18px;
+    }
+
+    .deal {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #edf2eb;
+      color: #25352b;
+    }
+
+    .deal:last-child {
+      border-bottom: none;
+    }
+
+    .discount {
+      background: #0a9f3b;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .logout {
+      margin-top: 16px;
+      width: 100%;
+      background: #eef5eb !important;
+      color: #0a8f35 !important;
+      border: 1px solid #d9e7d7 !important;
+    }
+
     .info-strip {
       padding: 0 8% 80px;
       display: grid;
@@ -332,6 +417,10 @@
       .info-strip {
         grid-template-columns: 1fr;
       }
+
+      .account-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -357,7 +446,7 @@
         <h1>Klein einkaufen. <br><span>Schnell bezahlen.</span></h1>
 
         <p class="intro">
-          Eulchen ist ein digitaler Minimarkt für den Alltag. 
+          Eulchen ist ein digitaler Minimarkt für den Alltag.
           Für Snacks, Getränke, Hygieneartikel und kleine Einkäufe — ohne lange Wartezeit.
         </p>
 
@@ -389,12 +478,48 @@
             <div>5 % Rabatt verfügbar</div>
           </div>
 
-          <div class="login">
-            <input type="text" placeholder="Benutzername">
-            <input type="password" placeholder="Passwort">
-            <button onclick="alert('Demo-Login erfolgreich! Bonuspunkte: 120 | Rabatt: 5 %')">
-              Demo-Login
-            </button>
+          <div class="login" id="loginBox">
+            <input id="username" type="text" placeholder="Benutzername">
+            <input id="password" type="password" placeholder="Passwort">
+            <button onclick="login()">Einloggen</button>
+            <div class="error" id="errorText">Bitte Benutzername demo und Passwort demo123 eingeben.</div>
+          </div>
+
+          <div class="account" id="accountPanel">
+            <h3>Willkommen, Demo-Kunde</h3>
+            <p>Hier sehen Sie Ihr Kundenkonto.</p>
+
+            <div class="account-grid">
+              <div class="account-box">
+                Bonuspunkte
+                <strong>120</strong>
+              </div>
+              <div class="account-box">
+                Rabatt
+                <strong>5 %</strong>
+              </div>
+            </div>
+
+            <div class="deals">
+              <p><strong>Aktionsprodukte</strong></p>
+
+              <div class="deal">
+                <span>Instant-Nudeln</span>
+                <span class="discount">-10 %</span>
+              </div>
+
+              <div class="deal">
+                <span>Energy Drink</span>
+                <span class="discount">2 für 1</span>
+              </div>
+
+              <div class="deal">
+                <span>Asiatische Snacks</span>
+                <span class="discount">-15 %</span>
+              </div>
+            </div>
+
+            <button class="logout" onclick="logout()">Abmelden</button>
           </div>
         </div>
       </div>
@@ -422,5 +547,36 @@
       Demo-Website für die BWL-Präsentation · Gruppe 5 · Nur für Präsentationszwecke
     </footer>
   </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      const errorText = document.getElementById("errorText");
+      const loginBox = document.getElementById("loginBox");
+      const accountPanel = document.getElementById("accountPanel");
+
+      if (username === "demo" && password === "demo123") {
+        errorText.style.display = "none";
+        loginBox.style.display = "none";
+        accountPanel.style.display = "block";
+      } else {
+        errorText.style.display = "block";
+      }
+    }
+
+    function logout() {
+      const loginBox = document.getElementById("loginBox");
+      const accountPanel = document.getElementById("accountPanel");
+      const username = document.getElementById("username");
+      const password = document.getElementById("password");
+
+      username.value = "";
+      password.value = "";
+      accountPanel.style.display = "none";
+      loginBox.style.display = "grid";
+    }
+  </script>
 </body>
 </html>
