@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eulchen | Selbstbedienungs-Minimarkt</title>
+  <title>Eulchen | Smart Minimarkt Zittau</title>
 
   <style>
     * {
@@ -14,159 +14,319 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f6f8f5;
-      color: #1d2a22;
+      background: #fbfcf8;
+      color: #17251c;
     }
 
-    header {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.75), transparent 25%),
-        radial-gradient(circle at 90% 15%, rgba(184,224,190,0.65), transparent 28%),
-        linear-gradient(135deg, #0d8f2d, #0f6b2d);
-      color: white;
+    .topbar {
+      width: 100%;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .brand {
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .hero {
-      max-width: 900px;
-    }
-
-    .logo {
-      width: 165px;
-      height: 165px;
-      object-fit: cover;
-      border-radius: 50%;
-      background: white;
-      padding: 10px;
-      margin-bottom: 22px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 64px;
-      letter-spacing: 4px;
+      gap: 12px;
       font-weight: 900;
-    }
-
-    .subtitle {
+      color: #078b2f;
       font-size: 24px;
-      margin: 14px 0 10px;
-      font-weight: 600;
-    }
-
-    .slogan {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 10px 22px;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.45);
-      border-radius: 999px;
-      font-weight: bold;
       letter-spacing: 1px;
     }
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 3px 18px rgba(0,0,0,0.08);
-      padding: 14px 20px;
-      text-align: center;
+    .brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
     nav a {
-      color: #0f6b2d;
+      margin-left: 24px;
       text-decoration: none;
+      color: #24352b;
       font-weight: bold;
-      margin: 0 14px;
       font-size: 15px;
     }
 
     nav a:hover {
-      color: #08a43a;
+      color: #079b35;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 140px 7% 70px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 50px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(24, 176, 66, 0.18), transparent 28%),
+        radial-gradient(circle at 10% 70%, rgba(132, 205, 140, 0.22), transparent 30%),
+        linear-gradient(135deg, #ffffff, #eef7ed);
+    }
+
+    .hero-text .small {
+      color: #078b2f;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 68px;
+      line-height: 1.02;
+      margin: 0 0 22px;
+      color: #14251a;
+    }
+
+    .hero h1 span {
+      color: #069b35;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: #4b5c51;
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      margin-top: 32px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      display: inline-block;
+    }
+
+    .btn-main {
+      background: #079b35;
+      color: white;
+      box-shadow: 0 12px 28px rgba(7, 155, 53, 0.25);
+    }
+
+    .btn-light {
+      background: white;
+      color: #079b35;
+      border: 2px solid #d8ead9;
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 36px;
+      padding: 36px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: #079b35;
+      opacity: 0.08;
+      top: -90px;
+      right: -90px;
+    }
+
+    .hero-card img {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-card h2 {
+      margin: 0;
+      font-size: 30px;
+      color: #0f6b2d;
+    }
+
+    .hero-card p {
+      font-size: 16px;
+      margin: 12px auto 0;
     }
 
     section {
-      max-width: 1080px;
-      margin: 42px auto;
-      padding: 0 22px;
+      padding: 85px 7%;
     }
 
-    .box {
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-title .label {
+      color: #079b35;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin: 10px 0 12px;
+      color: #14251a;
+    }
+
+    .section-title p {
+      color: #5d6b61;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .info-box {
       background: white;
       border-radius: 28px;
-      padding: 34px;
-      box-shadow: 0 12px 35px rgba(24, 70, 38, 0.10);
-      border: 1px solid #e0eadf;
+      padding: 28px;
+      box-shadow: 0 16px 42px rgba(0,0,0,0.07);
+      border: 1px solid #e4eee2;
     }
 
-    h2 {
-      margin-top: 0;
-      font-size: 34px;
-      color: #0f6b2d;
+    .info-box .number {
+      font-size: 38px;
+      font-weight: 900;
+      color: #079b35;
+      margin-bottom: 12px;
     }
 
-    .lead {
-      font-size: 18px;
-      color: #4a5b50;
-      max-width: 850px;
+    .info-box h3 {
+      font-size: 22px;
+      margin: 0 0 10px;
+      color: #173320;
     }
 
-    .grid {
+    .info-box p {
+      color: #5b665e;
+      line-height: 1.65;
+    }
+
+    .green-section {
+      background: #0f6b2d;
+      color: white;
+    }
+
+    .green-section .section-title h2,
+    .green-section .section-title p,
+    .green-section .section-title .label {
+      color: white;
+    }
+
+    .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      margin-top: 24px;
     }
 
-    .card {
-      background: #f7faf7;
-      border: 1px solid #dfeade;
-      border-radius: 22px;
-      padding: 22px;
-      transition: 0.25s ease;
+    .product {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 28px;
+      padding: 28px 22px;
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.10);
+    .product .icon {
+      font-size: 42px;
+      margin-bottom: 18px;
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: #0f6b2d;
-      font-size: 21px;
+    .product h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
     }
 
-    .badge {
-      display: inline-block;
-      background: #eaf6eb;
-      color: #0f6b2d;
-      padding: 7px 13px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: bold;
-      margin: 5px 5px 5px 0;
+    .product p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.6;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 26px;
+      padding: 26px;
+      border: 1px solid #e4eee2;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+    }
+
+    .step strong {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #079b35;
+      color: white;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      color: #173320;
+    }
+
+    .step p {
+      color: #5b665e;
+      line-height: 1.6;
+    }
+
+    .loyalty {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
     }
 
     .customer-card {
-      margin-top: 25px;
-      max-width: 430px;
-      border-radius: 26px;
-      padding: 28px;
-      color: white;
       background:
-        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.35), transparent 20%),
-        linear-gradient(135deg, #079d32, #0e5f2a);
-      box-shadow: 0 18px 38px rgba(13, 91, 38, 0.30);
+        radial-gradient(circle at 88% 15%, rgba(255,255,255,0.40), transparent 22%),
+        linear-gradient(135deg, #02a737, #0d5f2a);
+      color: white;
+      border-radius: 32px;
+      padding: 34px;
+      min-height: 260px;
+      box-shadow: 0 25px 50px rgba(7, 120, 45, 0.28);
       position: relative;
       overflow: hidden;
     }
@@ -174,110 +334,100 @@
     .customer-card::after {
       content: "";
       position: absolute;
-      width: 180px;
-      height: 180px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       background: rgba(255,255,255,0.12);
-      right: -55px;
-      bottom: -65px;
+      right: -70px;
+      bottom: -85px;
     }
 
-    .customer-card h3 {
-      margin: 0 0 18px;
-      font-size: 32px;
+    .customer-card .card-title {
+      font-size: 34px;
+      font-weight: 900;
       letter-spacing: 2px;
+      margin-bottom: 24px;
     }
 
     .customer-card p {
-      margin: 9px 0;
+      margin: 10px 0;
+      font-size: 17px;
+    }
+
+    .login-panel {
+      background: white;
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+      border: 1px solid #e4eee2;
+    }
+
+    .login-panel h3 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #0f6b2d;
+    }
+
+    .login-panel input {
+      width: 100%;
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid #cdddcf;
+      margin-bottom: 12px;
       font-size: 16px;
     }
 
-    .login-box {
-      max-width: 430px;
-      display: grid;
-      gap: 13px;
-      margin-top: 22px;
-    }
-
-    input {
-      padding: 15px;
-      border-radius: 14px;
-      border: 1px solid #c9d8c9;
-      font-size: 16px;
-      outline: none;
-    }
-
-    input:focus {
-      border-color: #0f8f33;
-      box-shadow: 0 0 0 3px rgba(15,143,51,0.12);
-    }
-
-    button {
-      background: #0f6b2d;
-      color: white;
+    .login-panel button {
+      width: 100%;
+      padding: 16px;
+      border-radius: 16px;
       border: none;
-      padding: 15px;
-      border-radius: 14px;
+      background: #079b35;
+      color: white;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 900;
       cursor: pointer;
     }
 
-    button:hover {
-      background: #089832;
+    .login-panel button:hover {
+      background: #087e2e;
     }
 
     .note {
-      margin-top: 18px;
-      background: #fff9e8;
-      border-left: 6px solid #e2b84b;
-      padding: 15px;
+      margin-top: 14px;
+      background: #fff8e5;
+      border-left: 5px solid #e7b947;
+      padding: 13px;
       border-radius: 14px;
-      color: #5a4a19;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .mini-logo {
-      width: 100%;
-      max-width: 280px;
-      border-radius: 28px;
-      background: white;
-      padding: 18px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-      justify-self: center;
+      color: #5d4a12;
+      font-size: 14px;
     }
 
     footer {
-      background: #13251a;
+      padding: 34px 7%;
+      background: #14251a;
       color: white;
       text-align: center;
-      padding: 28px 20px;
-      margin-top: 60px;
     }
 
-    @media (max-width: 760px) {
-      h1 {
-        font-size: 44px;
-      }
-
-      .subtitle {
-        font-size: 19px;
-      }
-
-      .split {
+    @media (max-width: 900px) {
+      .hero,
+      .loyalty {
         grid-template-columns: 1fr;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 6px 8px;
+      .info-grid,
+      .product-grid,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      nav {
+        display: none;
       }
     }
   </style>
@@ -285,82 +435,108 @@
 
 <body>
 
-  <header>
-    <div class="hero">
-      <img src="logo.jpg" alt="Eulchen Logo" class="logo">
-      <h1>EULCHEN</h1>
-      <p class="subtitle">Selbstbedienungs-Minimarkt in Zittau</p>
-      <p class="slogan">Digital. Schnell. Nah.</p>
+  <div class="topbar">
+    <div class="brand">
+      <img src="logo.jpg" alt="Eulchen Logo">
+      <span>EULCHEN</span>
+    </div>
+    <nav>
+      <a href="#idee">Idee</a>
+      <a href="#standort">Standort</a>
+      <a href="#sortiment">Sortiment</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#karte">Kundenkarte</a>
+    </nav>
+  </div>
+
+  <header class="hero" id="idee">
+    <div class="hero-text">
+      <div class="small">Smart Minimarkt in Zittau</div>
+      <h1>Ein kleiner Markt. <br><span>Ein schneller Einkauf.</span></h1>
+      <p>
+        Eulchen ist ein moderner Selbstbedienungs-Minimarkt für Schüler, Studierende und Anwohner.
+        Der Einkauf funktioniert einfach, digital und ohne lange Wartezeit.
+      </p>
+      <div class="hero-buttons">
+        <a href="#sortiment" class="btn btn-main">Sortiment ansehen</a>
+        <a href="#karte" class="btn btn-light">Kundenkarte entdecken</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <img src="logo.jpg" alt="Eulchen Logo">
+      <h2>Digital. Schnell. Nah.</h2>
+      <p>Selbstbedienung, Self-Checkout und Bonusprogramm in einem modernen Konzept.</p>
     </div>
   </header>
 
-  <nav>
-    <a href="#idee">Idee</a>
-    <a href="#standort">Standort</a>
-    <a href="#sortiment">Sortiment</a>
-    <a href="#kundenkarte">Kundenkarte</a>
-    <a href="#login">Demo-Login</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
-
-  <section id="idee">
-    <div class="box split">
-      <div>
-        <h2>Unsere Idee</h2>
-        <p class="lead">
-          Eulchen ist ein moderner Selbstbedienungs-Minimarkt. Die Kunden können selbstständig einkaufen, ihre Produkte am Self-Checkout-Terminal scannen und bargeldlos bezahlen.
-        </p>
-        <p>
-          Unser Ziel ist eine schnelle, einfache und digitale Einkaufsmöglichkeit für Schüler, Studierende und Anwohner in Zittau.
-        </p>
-        <span class="badge">Self-Checkout</span>
-        <span class="badge">Bargeldlos</span>
-        <span class="badge">Smart Store</span>
-      </div>
-      <img src="logo.jpg" alt="Eulchen Logo" class="mini-logo">
-    </div>
-  </section>
-
   <section id="standort">
-    <div class="box">
-      <h2>Standort und Öffnungszeiten</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Standort</h3>
-          <p>Külzufer 17<br>02763 Zittau</p>
-        </div>
-        <div class="card">
-          <h3>Öffnungszeiten</h3>
-          <p>Täglich von 5:00 bis 23:00 Uhr, abhängig von der rechtlichen Prüfung.</p>
-        </div>
-        <div class="card">
-          <h3>Zielgruppe</h3>
-          <p>Schüler, Studierende, Anwohner und Kunden mit kurzfristigem Einkaufsbedarf.</p>
-        </div>
+    <div class="section-title">
+      <div class="label">Standort</div>
+      <h2>Külzufer 17, Zittau</h2>
+      <p>
+        Der Standort liegt nah an unserer Zielgruppe. Der Markt ist für kleine und schnelle Einkäufe gedacht.
+      </p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <div class="number">01</div>
+        <h3>Nähe zur Zielgruppe</h3>
+        <p>Schüler, Studierende und Anwohner können den Markt schnell erreichen.</p>
+      </div>
+
+      <div class="info-box">
+        <div class="number">02</div>
+        <h3>Öffnungszeiten</h3>
+        <p>Geplant sind Öffnungszeiten von 5:00 bis 23:00 Uhr, abhängig von der rechtlichen Prüfung.</p>
+      </div>
+
+      <div class="info-box">
+        <div class="number">03</div>
+        <h3>Smart Store</h3>
+        <p>Der Einkauf erfolgt über digitale Eingangskontrolle, Self-Checkout und bargeldlose Zahlung.</p>
       </div>
     </div>
   </section>
 
-  <section id="sortiment">
-    <div class="box">
-      <h2>Unser Sortiment</h2>
-      <p class="lead">
-        Unser Sortiment ist kompakt, praktisch und besonders interessant für junge Kunden.
+  <section class="green-section" id="sortiment">
+    <div class="section-title">
+      <div class="label">Sortiment</div>
+      <h2>Alles für den schnellen Einkauf</h2>
+      <p>
+        Unser Sortiment ist kompakt und praktisch. Besonders junge Kunden sollen schnell passende Produkte finden.
       </p>
-      <div class="grid">
-        <div class="card">
+    </div>
+
+    <div class="product-grid">
+      <div class="product">
+        <div>
+          <div class="icon">🥤</div>
           <h3>Getränke</h3>
           <p>Wasser, Softdrinks, Energy Drinks und Kaffeeprodukte.</p>
         </div>
-        <div class="card">
+      </div>
+
+      <div class="product">
+        <div>
+          <div class="icon">🍫</div>
           <h3>Snacks</h3>
           <p>Chips, Schokolade, Süßigkeiten und kleine Zwischenmahlzeiten.</p>
         </div>
-        <div class="card">
+      </div>
+
+      <div class="product">
+        <div>
+          <div class="icon">🍜</div>
           <h3>Asiatische Produkte</h3>
           <p>Instant-Nudeln, asiatische Getränke, Süßigkeiten und Fertiggerichte.</p>
         </div>
-        <div class="card">
+      </div>
+
+      <div class="product">
+        <div>
+          <div class="icon">🧴</div>
           <h3>Alltagsprodukte</h3>
           <p>Hygieneartikel, Drogerieprodukte und kleine Haushaltsartikel.</p>
         </div>
@@ -368,61 +544,76 @@
     </div>
   </section>
 
-  <section id="kundenkarte">
-    <div class="box">
-      <h2>Eulchen-Kundenkarte</h2>
-      <p class="lead">
-        Die Eulchen-Kundenkarte ist ein Instrument zur Kundenbindung. Kunden können Punkte sammeln und später Rabatte oder Aktionen nutzen.
+  <section id="ablauf">
+    <div class="section-title">
+      <div class="label">Verkaufsprozess</div>
+      <h2>So funktioniert der Einkauf</h2>
+      <p>
+        Der Ablauf ist einfach, damit Kunden schnell einkaufen können.
       </p>
+    </div>
 
+    <div class="process">
+      <div class="step">
+        <strong>1</strong>
+        <h3>Eintritt</h3>
+        <p>Zugang mit EC-Karte, Kreditkarte, Mobile Payment oder Kundenkarte.</p>
+      </div>
+
+      <div class="step">
+        <strong>2</strong>
+        <h3>Auswahl</h3>
+        <p>Kunden wählen Getränke, Snacks oder andere Produkte aus.</p>
+      </div>
+
+      <div class="step">
+        <strong>3</strong>
+        <h3>Self-Checkout</h3>
+        <p>Die Produkte werden selbstständig am Terminal gescannt.</p>
+      </div>
+
+      <div class="step">
+        <strong>4</strong>
+        <h3>Zahlung</h3>
+        <p>Die Bezahlung erfolgt bargeldlos. Danach erhält der Kunde einen Bon.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="karte">
+    <div class="section-title">
+      <div class="label">Kundenbindung</div>
+      <h2>Eulchen-Kundenkarte</h2>
+      <p>
+        Mit der Kundenkarte können Kunden Bonuspunkte sammeln und später Rabatte oder Aktionen nutzen.
+      </p>
+    </div>
+
+    <div class="loyalty">
       <div class="customer-card">
-        <h3>EULCHEN</h3>
+        <div class="card-title">EULCHEN</div>
         <p><strong>Kundenkarte</strong></p>
         <p>Name: Demo-Kunde</p>
         <p>Kundennummer: EUL-0001</p>
-        <p>Bonusprogramm: Punkte sammeln und sparen</p>
-        <p>100 Punkte = 5 % Rabatt</p>
+        <p>Bonuspunkte: 120</p>
+        <p>Vorteil: 5 % Rabatt verfügbar</p>
       </div>
 
-      <div class="note">
-        Diese Kundenkarte ist ein Muster für die Präsentation.
-      </div>
-    </div>
-  </section>
-
-  <section id="login">
-    <div class="box">
-      <h2>Demo-Login</h2>
-      <p class="lead">
-        In Zukunft können Kunden ein digitales Kundenkonto nutzen. Diese Version ist nur eine Demo für unsere Präsentation.
-      </p>
-
-      <div class="login-box">
+      <div class="login-panel">
+        <h3>Demo-Login</h3>
+        <p>In Zukunft können Kunden hier ihr digitales Kundenkonto nutzen.</p>
         <input type="text" placeholder="Benutzername">
         <input type="password" placeholder="Passwort">
-        <button onclick="alert('Demo-Login erfolgreich! Punkte: 120 | Rabatt: 5 %')">
-          Einloggen
-        </button>
+        <button onclick="alert('Demo-Login erfolgreich! Bonuspunkte: 120 | Rabatt: 5 %')">Einloggen</button>
+        <div class="note">
+          Demo-Zugang: Benutzername: demo | Passwort: demo123. Es werden keine echten Daten gespeichert.
+        </div>
       </div>
-
-      <div class="note">
-        Demo-Zugang: Benutzername: demo | Passwort: demo123. Es werden keine echten Daten gespeichert.
-      </div>
-    </div>
-  </section>
-
-  <section id="kontakt">
-    <div class="box">
-      <h2>Kontakt</h2>
-      <p><strong>Eulchen GmbH</strong></p>
-      <p>Külzufer 17, 02763 Zittau</p>
-      <p>Projekt der Gruppe 5 im Fach BWL</p>
-      <p>Nur für Präsentationszwecke.</p>
     </div>
   </section>
 
   <footer>
-    Eulchen Demo-Website | Gruppe 5 | Digital. Schnell. Nah.
+    Eulchen Demo-Website | Gruppe 5 | Nur für Präsentationszwecke
   </footer>
 
 </body>
