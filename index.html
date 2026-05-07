@@ -13,118 +13,107 @@
 
     body {
       margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      background: #f6f8f3;
-      color: #162019;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7f1;
+      color: #132017;
     }
 
     .page {
       min-height: 100vh;
       background:
-        radial-gradient(circle at 8% 18%, rgba(0, 170, 57, 0.13), transparent 28%),
-        radial-gradient(circle at 90% 15%, rgba(0, 120, 45, 0.10), transparent 26%),
-        radial-gradient(circle at 72% 88%, rgba(0, 170, 57, 0.12), transparent 30%),
-        linear-gradient(135deg, #ffffff 0%, #f1f6ef 100%);
+        radial-gradient(circle at 12% 18%, rgba(37, 183, 83, 0.16), transparent 28%),
+        radial-gradient(circle at 88% 72%, rgba(37, 183, 83, 0.14), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, #eef5eb 100%);
+      overflow: hidden;
     }
 
     .nav {
       width: 100%;
-      padding: 24px 8%;
+      padding: 28px 8%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 24px;
+      gap: 13px;
+      font-size: 25px;
       font-weight: 900;
-      color: #078c35;
       letter-spacing: 1px;
+      color: #0a8f35;
     }
 
     .brand img {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
+      width: 48px;
+      height: 48px;
       object-fit: cover;
+      border-radius: 50%;
       background: white;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.14);
     }
 
-    .nav-links {
+    .nav-right {
       display: flex;
-      gap: 28px;
       align-items: center;
-    }
-
-    .nav-links a {
-      color: #26352b;
-      text-decoration: none;
+      gap: 14px;
+      font-size: 14px;
       font-weight: 700;
-      font-size: 15px;
+      color: #516058;
     }
 
-    .nav-links a:hover {
-      color: #079c3a;
-    }
-
-    .nav-button {
-      background: #0b8f37;
-      color: white !important;
-      padding: 11px 18px;
+    .nav-pill {
+      padding: 10px 16px;
       border-radius: 999px;
-      box-shadow: 0 10px 25px rgba(11, 143, 55, 0.22);
+      background: white;
+      border: 1px solid #dfe9dc;
+      color: #0a8f35;
     }
 
     .hero {
-      min-height: calc(100vh - 96px);
-      padding: 34px 8% 80px;
+      padding: 40px 8% 70px;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 70px;
       align-items: center;
-      gap: 64px;
+      min-height: calc(100vh - 105px);
     }
 
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(8, 154, 57, 0.10);
-      color: #078c35;
+    .eyebrow {
+      display: inline-block;
       padding: 10px 16px;
       border-radius: 999px;
+      background: rgba(10, 143, 53, 0.10);
+      color: #0a8f35;
+      font-size: 13px;
       font-weight: 900;
-      font-size: 14px;
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     h1 {
       margin: 0;
-      max-width: 760px;
-      font-size: 78px;
+      font-size: 74px;
       line-height: 0.98;
       letter-spacing: -3px;
-      color: #111b15;
+      color: #101a14;
     }
 
     h1 span {
-      color: #079c3a;
+      color: #0a9f3b;
     }
 
-    .hero-text p {
-      margin: 26px 0 0;
+    .intro {
+      margin-top: 28px;
       max-width: 620px;
       font-size: 20px;
       line-height: 1.75;
-      color: #526057;
+      color: #56645b;
     }
 
-    .hero-actions {
+    .actions {
       margin-top: 36px;
       display: flex;
       gap: 14px;
@@ -132,493 +121,122 @@
     }
 
     .btn {
+      text-decoration: none;
+      display: inline-block;
       padding: 16px 24px;
       border-radius: 999px;
-      text-decoration: none;
       font-weight: 900;
-      display: inline-block;
       transition: 0.2s ease;
     }
 
     .btn-primary {
-      background: #079c3a;
+      background: #0a9f3b;
       color: white;
-      box-shadow: 0 16px 35px rgba(7, 156, 58, 0.25);
+      box-shadow: 0 16px 35px rgba(10, 159, 59, 0.25);
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      background: #067f31;
+      background: #087d30;
     }
 
     .btn-secondary {
       background: white;
-      color: #078c35;
-      border: 1px solid #dbe8d8;
+      color: #0a8f35;
+      border: 1px solid #d9e7d7;
     }
 
     .btn-secondary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.08);
     }
 
-    .showcase {
+    .visual {
       position: relative;
-      min-height: 560px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      min-height: 560px;
     }
 
-    .glass-card {
+    .circle {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(10,159,59,0.18), rgba(255,255,255,0.3));
+      filter: blur(0.2px);
+    }
+
+    .panel {
       width: 100%;
       max-width: 430px;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(255,255,255,0.8);
+      backdrop-filter: blur(22px);
       border-radius: 42px;
       padding: 34px;
-      box-shadow: 0 30px 80px rgba(17, 55, 28, 0.16);
+      box-shadow: 0 35px 90px rgba(20, 60, 30, 0.18);
       position: relative;
       z-index: 2;
-      overflow: hidden;
     }
 
-    .glass-card::before {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: rgba(7, 156, 58, 0.10);
-      right: -90px;
-      top: -90px;
-    }
-
-    .logo-big {
-      width: 118px;
-      height: 118px;
-      border-radius: 50%;
+    .logo-large {
+      width: 120px;
+      height: 120px;
       object-fit: cover;
+      border-radius: 50%;
       background: white;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.13);
-      position: relative;
-      z-index: 2;
+      display: block;
+      margin-bottom: 26px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.15);
     }
 
-    .glass-card h2 {
-      margin: 26px 0 10px;
-      font-size: 34px;
-      color: #132017;
-      position: relative;
-      z-index: 2;
-    }
-
-    .glass-card p {
+    .panel h2 {
       margin: 0;
-      color: #5a675e;
-      line-height: 1.65;
-      position: relative;
-      z-index: 2;
+      font-size: 34px;
+      color: #111b15;
+    }
+
+    .panel .small-text {
+      color: #5c6a61;
+      line-height: 1.6;
+      margin: 12px 0 24px;
     }
 
     .customer-card {
-      margin-top: 26px;
-      padding: 24px;
-      border-radius: 28px;
-      color: white;
       background:
-        radial-gradient(circle at 88% 16%, rgba(255,255,255,0.35), transparent 24%),
-        linear-gradient(135deg, #09a73f, #0b642d);
-      box-shadow: 0 20px 45px rgba(7, 156, 58, 0.25);
-      position: relative;
-      z-index: 2;
+        radial-gradient(circle at 88% 18%, rgba(255,255,255,0.38), transparent 24%),
+        linear-gradient(135deg, #0bb145, #086629);
+      color: white;
+      border-radius: 28px;
+      padding: 25px;
+      box-shadow: 0 20px 45px rgba(8, 102, 41, 0.25);
     }
 
-    .card-top {
+    .card-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 26px;
+      margin-bottom: 30px;
     }
 
-    .card-title {
+    .card-name {
       font-size: 25px;
       font-weight: 900;
       letter-spacing: 1.5px;
     }
 
     .chip {
-      width: 42px;
-      height: 30px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #f5e5a7, #c59b39);
-      opacity: 0.95;
+      width: 44px;
+      height: 31px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #f5e5aa, #c6972f);
     }
 
     .points {
-      font-size: 34px;
-      font-weight: 900;
-      margin: 8px 0 0;
-    }
-
-    .login-mini {
-      margin-top: 22px;
-      display: grid;
-      gap: 10px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .login-mini input {
-      border: 1px solid #d5e3d4;
-      border-radius: 16px;
-      padding: 14px;
-      font-size: 15px;
-      background: white;
-    }
-
-    .login-mini button {
-      border: none;
-      border-radius: 16px;
-      padding: 14px;
-      background: #132017;
-      color: white;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .stats {
-      padding: 0 8% 74px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .stat {
-      background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(14px);
-      border: 1px solid #e2ebdf;
-      border-radius: 30px;
-      padding: 28px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.07);
-    }
-
-    .stat h3 {
-      margin: 0 0 9px;
-      color: #079c3a;
-      font-size: 22px;
-    }
-
-    .stat p {
-      margin: 0;
-      color: #59665e;
-      line-height: 1.6;
-    }
-
-    .legal-note {
-      margin-top: 10px;
-      font-size: 13px;
-      color: #7a867d;
-    }
-
-    footer {
-      padding: 22px 8% 34px;
-      text-align: center;
-      color: #718077;
-      font-size: 14px;
-    }
-
-    @media (max-width: 920px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      h1 {
-        font-size: 52px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .showcase {
-        min-height: auto;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="page">
-    <nav class="nav">
-      <div class="brand">
-        <img src="logo.jpg" alt="Eulchen Logo">
-        <span>EULCHEN</span>
-      </div>
-
-      <div class="nav-links">
-        <a href="#karte">Kundenkarte</a>
-        <a href="#info">Info</a>
-        <a class="nav-button" href="#demo">Demo-Login</a>
-      </div>
-    </nav>
-
-    <main class="hero">
-      <div class="hero-text">
-        <div class="tag">Smart Minimarkt · Zittau</div>
-
-        <h1>Dein schneller Einkauf <span>in der Nähe.</span></h1>
-
-        <p>
-          Eulchen ist ein moderner Selbstbedienungs-Minimarkt für kleine Einkäufe im Alltag:
-          digitaler Zugang, Self-Checkout und ein Bonusprogramm für Stammkunden.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#karte" class="btn btn-primary">Kundenkarte ansehen</a>
-          <a href="#info" class="btn btn-secondary">Kurzinfo</a>
-        </div>
-      </div>
-
-      <div class="showcase" id="karte">
-        <div class="glass-card">
-          <img src="logo.jpg" alt="Eulchen Logo" class="logo-big">
-
-          <h2>Eulchen Karte</h2>
-          <p>Punkte sammeln, Aktionen nutzen und beim Einkauf sparen.</p>
-
-          <div class="customer-card">
-            <div class="card-top">
-              <div class="card-title">EULCHEN</div>
-              <div class="chip"></div>
-            </div>
-            <div>Demo-Kunde</div>
-            <div class="points">120 Punkte</div>
-            <div>5 % Rabatt verfügbar</div>
-          </div>
-
-          <div class="login-mini" id="demo">
-            <input type="text" placeholder="Benutzername">
-            <input type="password" placeholder="Passwort">
-            <button onclick="alert('Demo-Login erfolgreich! Bonuspunkte: 120 | Rabatt: 5 %')">
-              Demo-Login
-            </button>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <section class="stats" id="info">
-      <div class="stat">
-        <h3>Standort</h3>
-        <p>Külzufer 17, 02763 Zittau.</p>
-      </div>
-
-      <div class="stat">
-        <h3>Öffnungszeiten</h3>
-        <p>7 Tage pro Woche: 5:00–23:00 Uhr.</p>
-      </div>
-
-      <div class="stat">
-        <h3>Sortiment</h3>
-        <p>Snacks, Getränke, Hygieneartikel, asiatische Produkte sowie Tabakwaren und alkoholische Getränke.</p>
-        <p class="legal-note">Altersbeschränkte Waren nur mit Altersprüfung.</p>
-      </div>
-    </section>
-
-    <footer>
-      Demo-Website für die BWL-Präsentation · Gruppe 5 · Nur für Präsentationszwecke
-    </footer>
-  </div>
-</body>
-</html>
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      font-size: 24px;
-      color: #0b8f34;
-      letter-spacing: 1px;
-    }
-
-    .brand img {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      object-fit: cover;
-      background: white;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-
-    .nav-links a {
-      margin-left: 26px;
-      color: #26372b;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    .nav-links a:hover {
-      color: #0b9d38;
-    }
-
-    .hero {
-      min-height: calc(100vh - 94px);
-      padding: 40px 8% 80px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 60px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 9px 16px;
-      border-radius: 999px;
-      background: rgba(11, 157, 56, 0.10);
-      color: #0b8f34;
-      font-weight: 900;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 76px;
-      line-height: 0.98;
-      letter-spacing: -2px;
-      color: #132017;
-    }
-
-    h1 span {
-      color: #0b9d38;
-    }
-
-    .hero-text p {
-      margin: 26px 0 0;
-      max-width: 590px;
-      font-size: 20px;
-      line-height: 1.7;
-      color: #526157;
-    }
-
-    .buttons {
-      margin-top: 34px;
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 16px 25px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 900;
-      transition: 0.2s;
-    }
-
-    .btn-main {
-      background: #0b9d38;
-      color: white;
-      box-shadow: 0 16px 34px rgba(11, 157, 56, 0.25);
-    }
-
-    .btn-main:hover {
-      transform: translateY(-3px);
-      background: #078c30;
-    }
-
-    .btn-light {
-      background: white;
-      color: #0b8f34;
-      border: 1px solid #dce9dc;
-    }
-
-    .phone {
-      width: 100%;
-      max-width: 390px;
-      justify-self: center;
-      background: #101a14;
-      border-radius: 42px;
-      padding: 16px;
-      box-shadow: 0 35px 75px rgba(0,0,0,0.24);
-      transform: rotate(2deg);
-    }
-
-    .screen {
-      background: white;
-      border-radius: 30px;
-      padding: 28px;
-      min-height: 560px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .screen::before {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: rgba(11, 157, 56, 0.10);
-      right: -80px;
-      top: -70px;
-    }
-
-    .screen-logo {
-      width: 92px;
-      height: 92px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      margin-bottom: 22px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .screen h2 {
-      margin: 0;
-      font-size: 31px;
-      color: #132017;
-      position: relative;
-      z-index: 2;
-    }
-
-    .screen p {
-      color: #5a675e;
-      line-height: 1.6;
-      position: relative;
-      z-index: 2;
-    }
-
-    .mini-card {
-      margin-top: 24px;
-      background: linear-gradient(135deg, #0b9d38, #08702a);
-      color: white;
-      border-radius: 24px;
-      padding: 22px;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 16px 32px rgba(11, 157, 56, 0.22);
-    }
-
-    .mini-card strong {
-      font-size: 20px;
-    }
-
-    .points {
-      margin-top: 12px;
-      font-size: 34px;
+      margin-top: 7px;
+      font-size: 36px;
       font-weight: 900;
     }
 
@@ -626,81 +244,92 @@
       margin-top: 24px;
       display: grid;
       gap: 11px;
-      position: relative;
-      z-index: 2;
     }
 
     .login input {
-      width: 100%;
       padding: 14px;
-      border-radius: 14px;
-      border: 1px solid #d2dfd1;
+      border: 1px solid #d2dfd0;
+      border-radius: 16px;
+      background: white;
       font-size: 15px;
     }
 
     .login button {
       padding: 14px;
+      border-radius: 16px;
       border: none;
-      border-radius: 14px;
-      background: #132017;
+      background: #121e16;
       color: white;
       font-weight: 900;
       cursor: pointer;
       font-size: 15px;
     }
 
-    .quick-info {
-      padding: 30px 8% 70px;
+    .info-strip {
+      padding: 0 8% 80px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
     .info {
-      background: rgba(255,255,255,0.82);
-      border: 1px solid #e0eadf;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid #e0eadc;
       border-radius: 28px;
       padding: 26px;
-      box-shadow: 0 14px 36px rgba(0,0,0,0.07);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.07);
     }
 
     .info h3 {
       margin: 0 0 10px;
-      font-size: 22px;
-      color: #0b8f34;
+      font-size: 21px;
+      color: #0a8f35;
     }
 
     .info p {
       margin: 0;
-      color: #56635a;
+      color: #5b675f;
       line-height: 1.6;
+      font-size: 15.5px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #78847c;
+      margin-top: 8px;
     }
 
     footer {
       text-align: center;
-      padding: 24px 8%;
-      color: #6c776f;
+      padding: 22px 8% 34px;
+      color: #77837b;
       font-size: 14px;
     }
 
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
+        gap: 30px;
       }
 
       h1 {
-        font-size: 52px;
+        font-size: 50px;
       }
 
-      .nav-links {
+      .nav-right {
         display: none;
       }
 
-      .phone {
-        transform: none;
+      .visual {
+        min-height: auto;
       }
 
-      .quick-info {
+      .circle {
+        width: 360px;
+        height: 360px;
+      }
+
+      .info-strip {
         grid-template-columns: 1fr;
       }
     }
@@ -715,38 +344,49 @@
         <span>EULCHEN</span>
       </div>
 
-      <div class="nav-links">
-        <a href="#idee">Idee</a>
-        <a href="#karte">Kundenkarte</a>
-        <a href="#info">Info</a>
+      <div class="nav-right">
+        <span>Smart Minimarkt</span>
+        <span class="nav-pill">5:00–23:00</span>
       </div>
     </nav>
 
-    <main class="hero" id="idee">
-      <div class="hero-text">
-        <div class="tag">Smart Minimarkt in Zittau</div>
-        <h1>Schnell einkaufen.<br><span>Einfach bezahlen.</span></h1>
-        <p>
-          Eulchen ist ein moderner Selbstbedienungs-Minimarkt für kleine Einkäufe im Alltag.
-          Digitaler Zugang, Self-Checkout und Kundenkarte machen den Einkauf unkompliziert.
+    <main class="hero">
+      <div>
+        <div class="eyebrow">Selbstbedienungs-Minimarkt · Zittau</div>
+
+        <h1>Klein einkaufen. <br><span>Schnell bezahlen.</span></h1>
+
+        <p class="intro">
+          Eulchen ist ein digitaler Minimarkt für den Alltag. 
+          Für Snacks, Getränke, Hygieneartikel und kleine Einkäufe — ohne lange Wartezeit.
         </p>
 
-        <div class="buttons">
-          <a href="#karte" class="btn btn-main">Kundenkarte ansehen</a>
-          <a href="#info" class="btn btn-light">Mehr erfahren</a>
+        <div class="actions">
+          <a href="#karte" class="btn btn-primary">Kundenkarte zeigen</a>
+          <a href="#info" class="btn btn-secondary">Kurzinfo</a>
         </div>
       </div>
 
-      <div class="phone" id="karte">
-        <div class="screen">
-          <img src="logo.jpg" alt="Eulchen Logo" class="screen-logo">
-          <h2>Eulchen Kundenkarte</h2>
-          <p>Bonus sammeln und Aktionen nutzen.</p>
+      <div class="visual" id="karte">
+        <div class="circle"></div>
 
-          <div class="mini-card">
-            <strong>Demo-Kunde</strong>
+        <div class="panel">
+          <img src="logo.jpg" alt="Eulchen Logo" class="logo-large">
+
+          <h2>Bonuskarte</h2>
+          <p class="small-text">
+            Punkte sammeln, Aktionen nutzen und beim Einkauf sparen.
+          </p>
+
+          <div class="customer-card">
+            <div class="card-head">
+              <div class="card-name">EULCHEN</div>
+              <div class="chip"></div>
+            </div>
+
+            <div>Demo-Kunde</div>
             <div class="points">120 Punkte</div>
-            <p>5 % Rabatt verfügbar</p>
+            <div>5 % Rabatt verfügbar</div>
           </div>
 
           <div class="login">
@@ -760,25 +400,26 @@
       </div>
     </main>
 
-    <section class="quick-info" id="info">
+    <section class="info-strip" id="info">
       <div class="info">
         <h3>Standort</h3>
-        <p>Külzufer 17, 02763 Zittau. Nah bei Schülern, Studierenden und Anwohnern.</p>
+        <p>Külzufer 17, 02763 Zittau.</p>
       </div>
 
       <div class="info">
         <h3>Öffnungszeiten</h3>
-        <p>Geplant: 5:00 bis 23:00 Uhr, abhängig von der rechtlichen Prüfung.</p>
+        <p>7 Tage pro Woche: 5:00–23:00 Uhr.</p>
       </div>
 
       <div class="info">
         <h3>Sortiment</h3>
-        <p>Getränke, Snacks, Hygieneartikel, Fertiggerichte und asiatische Produkte.</p>
+        <p>Snacks, Getränke, Hygieneartikel, asiatische Produkte, Tabakwaren und alkoholische Getränke.</p>
+        <div class="note">Altersbeschränkte Waren nur mit Altersprüfung.</div>
       </div>
     </section>
 
     <footer>
-      Demo-Website für die BWL-Präsentation | Gruppe 5 | Nur für Präsentationszwecke
+      Demo-Website für die BWL-Präsentation · Gruppe 5 · Nur für Präsentationszwecke
     </footer>
   </div>
 </body>
